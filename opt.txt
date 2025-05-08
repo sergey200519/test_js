@@ -1,0 +1,42 @@
+Concurrent maglev has been disabled for tracing.
+[marking 0x326b001d4419 <JSFunction fun3 (sfi = 0x326b000632c5)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[marking 0x326b001d43e9 <JSFunction fun2 (sfi = 0x326b00063239)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[marking 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> (target MAGLEV), mode: ConcurrencyMode::kSynchronous]
+[completed compiling 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> (target MAGLEV) - took 0.001, 0.851, 0.005 ms]
+[marking 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> for optimization to TURBOFAN_JS, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> (target TURBOFAN_JS), mode: ConcurrencyMode::kConcurrent]
+[marking 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> (target MAGLEV) OSR, mode: ConcurrencyMode::kSynchronous]
+[completed compiling 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> (target MAGLEV) OSR - took 0.000, 0.669, 0.014 ms]
+[compiling method 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> (target TURBOFAN_JS) OSR, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> (target TURBOFAN_JS) - took 0.017, 1.865, 0.027 ms]
+[completed optimizing 0x326b001c7d79 <JSFunction fun (sfi = 0x326b00063119)> (target TURBOFAN_JS)]
+[completed compiling 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> (target TURBOFAN_JS) OSR - took 0.007, 2.145, 0.038 ms]
+[completed optimizing 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> (target TURBOFAN_JS) OSR]
+[bailout (kind: deopt-eager, reason: prepare for on stack replacement (OSR)): begin. deoptimizing 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)>, 0x3cf100100b85 <Code MAGLEV>, opt id 2, node id 0, bytecode offset 58, deopt exit 11, FP to SP delta 88, caller SP 0x7ffd82917c88, pc 0x7723e0002be4]
+            ;;; deoptimize at <./const/const-opt3.js:15:1>
+  reading input frame  => bytecode_offset=58, args=1, height=3, retval=0(#0); inputs:
+      0: 0x326b00063169 ;  [fp -  16]  0x326b00063169 <JSFunction (sfi = 0x326b000630b5)>
+      1: 0x326b0004b7f5 ;  [fp +  16]  0x326b0004b7f5 <JSGlobalProxy>
+      2: 0x326b000631a9 ;  [fp -   8]  0x326b000631a9 <ScriptContext[3]>
+      3: 0x326b00000011 ; (literal  5) 0x326b00000011 <undefined>
+      4: (optimized out)
+      5: (optimized out)
+      6: (optimized out)
+  translating interpreted frame  => bytecode_offset=58, variable_frame_size=32, frame_size=104
+    0x7ffd82917c80: [top +  96] <- 0x326b0004b7f5 <JSGlobalProxy> ;  stack parameter (input #1)
+    -------------------------
+    0x7ffd82917c78: [top +  88] <- 0x7723b222f8dc ;  bottommost caller's pc
+    0x7ffd82917c70: [top +  80] <- 0x7ffd82917c98 ;  caller's fp
+    0x7ffd82917c68: [top +  72] <- 0x326b000631a9 <ScriptContext[3]> ;  context (input #2)
+    0x7ffd82917c60: [top +  64] <- 0x326b00063169 <JSFunction (sfi = 0x326b000630b5)> ;  function (input #0)
+    0x7ffd82917c58: [top +  56] <- 0x000000000001 ;  actual argument count
+    0x7ffd82917c50: [top +  48] <- 0x3cf100100061 <BytecodeArray[65]> ;  bytecode array
+    0x7ffd82917c48: [top +  40] <- 0x0000000000c2 <Smi 97> ;  bytecode offset
+    0x7ffd82917c40: [top +  32] <- 0x326b00005d95 <arguments_marker> ;  feedback vector    -------------------------
+    0x7ffd82917c38: [top +  24] <- 0x326b00000011 <undefined> ;  stack parameter (input #3)
+    0x7ffd82917c30: [top +  16] <- 0x326b00005db9 <optimized_out> ;  stack parameter (input #4)
+    0x7ffd82917c28: [top +   8] <- 0x326b00005db9 <optimized_out> ;  stack parameter (input #5)
+    0x7ffd82917c20: [top +   0] <- 0x326b00005db9 <optimized_out> ;  accumulator (input #6)
+[bailout end. took 0.066 ms]

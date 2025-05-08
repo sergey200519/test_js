@@ -1,0 +1,4 @@
+% NeverOptimizeFunction()
+--allow-natives-syntax
+
+~/.jsvu/bin/v8-debug --trace-opt --trace-deopt-verbose ./script/opt/2.js > opt3.txt

@@ -1,0 +1,103 @@
+Concurrent maglev has been disabled for tracing.
+[marking 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target MAGLEV) OSR, mode: ConcurrencyMode::kSynchronous]
+[completed compiling 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target MAGLEV) OSR - took 0.001, 0.763, 0.005 ms]
+[compiling method 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR - took 0.016, 2.380, 0.047 ms]
+[completed optimizing 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR]
+[bailout (kind: deopt-eager, reason: prepare for on stack replacement (OSR)): begin. deoptimizing 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>, 0x20a7001004e1 <Code MAGLEV>, opt id 0, node id 0, bytecode offset 13, deopt exit 10, FP to SP delta 128, caller SP 0x7ffc86c98480, pc 0x7a1ae0000ce9]
+            ;;; deoptimize at <./script/opt/2.js:6:5>
+  reading input frame doSome => bytecode_offset=13, args=2, height=4, retval=0(#0); inputs:
+      0: 0x383000063199 ;  [fp -  16]  0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>
+      1: 0x38300004b7f5 ;  [fp +  16]  0x38300004b7f5 <JSGlobalProxy>
+      2: 0x383000000002 ;  [fp +  24]  1
+      3: 0x38300004b855 ;  [fp -   8]  0x38300004b855 <NativeContext[303]>
+      4: 0x3830000f4240 ;  [fp -  56]  500000
+      5: 117383 ; (int32) [fp - 128] 
+      6: (optimized out)
+      7: (optimized out)
+      8: 0x38300003950e ;  [fp -  72]  117383
+  translating interpreted frame doSome => bytecode_offset=13, variable_frame_size=40, frame_size=120
+    0x7ffc86c98478: [top + 112] <- 0x383000000002 <Smi 1> ;  stack parameter (input #2)
+    0x7ffc86c98470: [top + 104] <- 0x38300004b7f5 <JSGlobalProxy> ;  stack parameter (input #1)
+    -------------------------
+    0x7ffc86c98468: [top +  96] <- 0x7a1ad363d332 ;  bottommost caller's pc
+    0x7ffc86c98460: [top +  88] <- 0x7ffc86c984c8 ;  caller's fp
+    0x7ffc86c98458: [top +  80] <- 0x38300004b855 <NativeContext[303]> ;  context (input #3)
+    0x7ffc86c98450: [top +  72] <- 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> ;  function (input #0)
+    0x7ffc86c98448: [top +  64] <- 0x000000000002 ;  actual argument count
+    0x7ffc86c98440: [top +  56] <- 0x20a7001000c5 <BytecodeArray[41]> ;  bytecode array
+    0x7ffc86c98438: [top +  48] <- 0x000000000068 <Smi 52> ;  bytecode offset
+    0x7ffc86c98430: [top +  40] <- 0x383000005d95 <arguments_marker> ;  feedback vector    -------------------------
+    0x7ffc86c98428: [top +  32] <- 0x3830000f4240 <Smi 500000> ;  stack parameter (input #4)
+    0x7ffc86c98420: [top +  24] <- 0x00000003950e <Smi 117383> ;  stack parameter (input #5)
+    0x7ffc86c98418: [top +  16] <- 0x383000005db9 <optimized_out> ;  stack parameter (input #6)
+    0x7ffc86c98410: [top +   8] <- 0x383000005db9 <optimized_out> ;  stack parameter (input #7)
+    0x7ffc86c98408: [top +   0] <- 0x38300003950e <Smi 117383> ;  accumulator (input #8)
+[bailout end. took 0.056 ms]
+[bailout (kind: deopt-eager, reason: not a Smi): begin. deoptimizing 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>, 0x20a700100991 <Code TURBOFAN_JS>, opt id 1, node id 52, bytecode offset 13, deopt exit 3, FP to SP delta 120, caller SP 0x7ffc86c98480, pc 0x7a1ae0001024]
+            ;;; deoptimize at <./script/opt/2.js:7:15>
+  reading input frame doSome => bytecode_offset=13, args=2, height=4, retval=0(#0); inputs:
+      0: 0x383000063199 ;  [fp -  16]  0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>
+      1: 0x38300004b7f5 ;  [fp +  16]  0x38300004b7f5 <JSGlobalProxy>
+      2: 0x3830000030fd ;  [fp +  24]  0x3830000030fd <String[1]: #1>
+      3: 0x38300004b855 ;  [fp -  88]  0x38300004b855 <NativeContext[303]>
+      4: 0x3830000f4240 ; r8 500000
+      5: 0x3830001c7d1d ; rcx 0x3830001c7d1d <String[2]: "01">
+      6: (optimized out)
+      7: (optimized out)
+      8: 0x383000000002 ; rdx 1
+  translating interpreted frame doSome => bytecode_offset=13, variable_frame_size=40, frame_size=120
+    0x7ffc86c98478: [top + 112] <- 0x3830000030fd <String[1]: #1> ;  stack parameter (input #2)
+    0x7ffc86c98470: [top + 104] <- 0x38300004b7f5 <JSGlobalProxy> ;  stack parameter (input #1)
+    -------------------------
+    0x7ffc86c98468: [top +  96] <- 0x7a1ad363d332 ;  bottommost caller's pc
+    0x7ffc86c98460: [top +  88] <- 0x7ffc86c984c8 ;  caller's fp
+    0x7ffc86c98458: [top +  80] <- 0x38300004b855 <NativeContext[303]> ;  context (input #3)
+    0x7ffc86c98450: [top +  72] <- 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> ;  function (input #0)
+    0x7ffc86c98448: [top +  64] <- 0x000000000002 ;  actual argument count
+    0x7ffc86c98440: [top +  56] <- 0x20a7001000c5 <BytecodeArray[41]> ;  bytecode array
+    0x7ffc86c98438: [top +  48] <- 0x000000000068 <Smi 52> ;  bytecode offset
+    0x7ffc86c98430: [top +  40] <- 0x383000005d95 <arguments_marker> ;  feedback vector    -------------------------
+    0x7ffc86c98428: [top +  32] <- 0x3830000f4240 <Smi 500000> ;  stack parameter (input #4)
+    0x7ffc86c98420: [top +  24] <- 0x3830001c7d1d <String[2]: "01"> ;  stack parameter (input #5)
+    0x7ffc86c98418: [top +  16] <- 0x383000005db9 <optimized_out> ;  stack parameter (input #6)
+    0x7ffc86c98410: [top +   8] <- 0x383000005db9 <optimized_out> ;  stack parameter (input #7)
+    0x7ffc86c98408: [top +   0] <- 0x383000000002 <Smi 1> ;  accumulator (input #8)
+[bailout end. took 0.068 ms]
+[marking 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> for optimization to MAGLEV, ConcurrencyMode::kConcurrent, reason: hot and stable]
+[compiling method 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target MAGLEV) OSR, mode: ConcurrencyMode::kSynchronous]
+[completed compiling 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target MAGLEV) OSR - took 0.000, 0.194, 0.002 ms]
+[compiling method 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR, mode: ConcurrencyMode::kConcurrent]
+[completed compiling 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR - took 0.007, 1.144, 0.035 ms]
+[completed optimizing 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> (target TURBOFAN_JS) OSR]
+[bailout (kind: deopt-eager, reason: prepare for on stack replacement (OSR)): begin. deoptimizing 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>, 0x20a700100d25 <Code MAGLEV>, opt id 2, node id 0, bytecode offset 35, deopt exit 6, FP to SP delta 96, caller SP 0x7ffc86c98480, pc 0x7a1ae0001c08]
+            ;;; deoptimize at <./script/opt/2.js:6:5>
+  reading input frame doSome => bytecode_offset=35, args=2, height=4, retval=0(#0); inputs:
+      0: 0x383000063199 ;  [fp -  16]  0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)>
+      1: 0x38300004b7f5 ;  [fp +  16]  0x38300004b7f5 <JSGlobalProxy>
+      2: 0x3830000030fd ;  [fp +  24]  0x3830000030fd <String[1]: #1>
+      3: 0x38300004b855 ;  [fp -   8]  0x38300004b855 <NativeContext[303]>
+      4: 0x3830000f4240 ;  [fp -  56]  500000
+      5: 0x3830001e4b51 ;  [fp -  64]  0x3830001e4b51 <String[5918]: c"...<truncated>>">
+      6: 5917 ; (int32) [fp -  96] 
+      7: (optimized out)
+      8: (optimized out)
+  translating interpreted frame doSome => bytecode_offset=35, variable_frame_size=40, frame_size=120
+    0x7ffc86c98478: [top + 112] <- 0x3830000030fd <String[1]: #1> ;  stack parameter (input #2)
+    0x7ffc86c98470: [top + 104] <- 0x38300004b7f5 <JSGlobalProxy> ;  stack parameter (input #1)
+    -------------------------
+    0x7ffc86c98468: [top +  96] <- 0x7a1ad363d332 ;  bottommost caller's pc
+    0x7ffc86c98460: [top +  88] <- 0x7ffc86c984c8 ;  caller's fp
+    0x7ffc86c98458: [top +  80] <- 0x38300004b855 <NativeContext[303]> ;  context (input #3)
+    0x7ffc86c98450: [top +  72] <- 0x383000063199 <JSFunction doSome (sfi = 0x38300006310d)> ;  function (input #0)
+    0x7ffc86c98448: [top +  64] <- 0x000000000002 ;  actual argument count
+    0x7ffc86c98440: [top +  56] <- 0x20a7001000c5 <BytecodeArray[41]> ;  bytecode array
+    0x7ffc86c98438: [top +  48] <- 0x000000000094 <Smi 74> ;  bytecode offset
+    0x7ffc86c98430: [top +  40] <- 0x383000005d95 <arguments_marker> ;  feedback vector    -------------------------
+    0x7ffc86c98428: [top +  32] <- 0x3830000f4240 <Smi 500000> ;  stack parameter (input #4)
+    0x7ffc86c98420: [top +  24] <- 0x3830001e4b51 <String[5918]: c"...<truncated>>"> ;  stack parameter (input #5)
+    0x7ffc86c98418: [top +  16] <- 0x000000002e3a <Smi 5917> ;  stack parameter (input #6)
+    0x7ffc86c98410: [top +   8] <- 0x383000005db9 <optimized_out> ;  stack parameter (input #7)
+    0x7ffc86c98408: [top +   0] <- 0x383000005db9 <optimized_out> ;  accumulator (input #8)
+[bailout end. took 0.038 ms]

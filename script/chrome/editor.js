@@ -1,0 +1,7 @@
+const { JSDOM } = require('jsdom');
+const dom = new JSDOM(`<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Редактор кода</title><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet"><script defer="defer" src="bundle.js"></script></head><body><header><h1>Редактор кода</h1><div class=""><input type="number" class="width_preview_in_html" placeholder="ширина сайта"></div><button class="update">Запустить код</button> <img src="img/settings.png" class="on_off"></header><section class="code_box"><div class="code_part"><div class="user_code_box user_code_box-html"><div class="user_code_on_of user_code_on_of-html">&#215;</div><div class="user_code user_code-html"></div></div><div class="user_code_box user_code_box-css"><div class="user_code_on_of user_code_on_of-css">&#215;</div><div class="user_code user_code-css"></div></div><div class="user_code_box user_code_box-js"><div class="user_code_on_of user_code_on_of-js">&#215;</div><div class="user_code user_code-js"></div></div></div><div class="view"><iframe class="screen"></iframe><textarea class="logs"></textarea></div></section>
+ <script>
+    
+ </script>
+ </body></html>`);
+const document = dom.window.document;
